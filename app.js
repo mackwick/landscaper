@@ -4,8 +4,9 @@
 //you start with your teeth, which generates $1/day
 
 const tools = [
-    {name: "Teeth", generates: 1, cost: 0}
-    {name: "Rusty scisors", generates: "unknown", cost: 5}
+    {name: "Teeth", generates: 1, cost: 0}, //unlimited use
+    {name: "Rusty scisors", generates: 5, cost: 5}, //purchase once, unlimited use
+
 ]
 
 const player = {
