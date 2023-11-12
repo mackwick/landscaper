@@ -34,3 +34,7 @@ function buyTool() {
         }
     }
 }
+
+if (player.tool === "Starving students" && player.money >= 1000) {
+    alert(`You've hired a team and generated ${player.money}! You've won the game!`)
+} else // loop back to next round -- use a prompt?
