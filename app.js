@@ -8,12 +8,13 @@ const tools = [
     {name: "Rusty scisors", generates: 5, cost: 5}, //purchase once, unlimited use
     {name: "Old-timey push mower", generates: 50, cost: 25}, //purchase once, unlimited use
     {name: "Fancy battery mower", generates: 100, cost: 250}, //purchase once, unlimited use
-    {name: "Starving students", generates: 250, cost: 500}, //purchase once, unlimited use
+    {name: "Team of starving students", generates: 250, cost: 500}, //purchase once, unlimited use
 ]
 
 const player = {
     money: 0,
-    tool: 0
+    tool: 0,
+    wonGame: false
 }
 
 function mowLawn() {
@@ -26,15 +27,32 @@ function buyTool() {
     if (player.tool + 1 < tools.length) {
         const newTool = tools[player.tool + 1];
         if (newTool.cost <= player.money) {
-            alert(`You have purchased a ${newTool.name} and spent ${newTool.cost}.`);
-            player.tool = newTool;
-            player.money -= tool.cost
-        } else {
-            alert(`There are no new tools available to buy.`)
-        }
+            alert(`You have bought a ${newTool.name} for ${newTool.cost}. Now get back to work!`);
+            player.tool += 1;
+            player.money -= tool.cost 
+        } else {alert("You cannot afford a new tool right now.")
+            
+        } else {alert(`There are no new tools available to buy.`)}
     }
 }
 
-if (player.tool === "Starving students" && player.money >= 1000) {
-    alert(`You've hired a team and generated ${player.money}! You've won the game!`)
-} else // loop back to next round -- use a prompt?
+function winConditions() {
+if (player.tool === tools.length - 1 && player.money >= 1000) {
+    alert(`You've hire;d a team and generated ${player.money}! You've won the game!`) 
+    player.wonGame: true;
+}
+
+
+alert("Welcome to capitalism! You're a landscaper. Get to work!")
+
+
+while(!player.wonGame) {
+    const response = prompt(`You currently have ${player.money} dollars. Do you want to [m]ow lawns or [b]uy a new tool?`)
+    if (response === "m") {
+        mowLawn()
+    } else if (response === "b") {
+        buyTool()
+    } else {
+        alert("That's not a valad option! This is capatilism, baby. You gotta work, buy, or die. Type 'c' to grind or 'u' to consume.")
+    }
+}
