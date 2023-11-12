@@ -1,8 +1,5 @@
 //console.log("Yo, it's working.")
 
-//you cut lawns
-//you start with your teeth, which generates $1/day
-
 const tools = [
     {name: "Teeth", generates: 1, cost: 0}, //unlimited use
     {name: "Rusty scisors", generates: 5, cost: 5}, //purchase once, unlimited use
@@ -30,29 +27,28 @@ function buyTool() {
             alert(`You have bought a ${newTool.name} for ${newTool.cost}. Now get back to work!`);
             player.tool += 1;
             player.money -= tool.cost 
-        } else {alert("You cannot afford a new tool right now.")
-            
-        } else {alert(`There are no new tools available to buy.`)}
-    }
+        } else {alert("You cannot afford a new tool right now.")    
+        } 
+    } else {alert(`There are no new tools available to buy.`)}
 }
 
 function winConditions() {
-if (player.tool === tools.length - 1 && player.money >= 1000) {
+if (player.tool === tools.length - 1 && player.money >= 10) {
     alert(`You've hire;d a team and generated ${player.money}! You've won the game!`) 
-    player.wonGame: true;
-}
+    player.wonGame === true;
+}}
 
 
 alert("Welcome to capitalism! You're a landscaper. Get to work!")
 
 
-while(!player.wonGame) {
-    const response = prompt(`You currently have ${player.money} dollars. Do you want to [m]ow lawns or [b]uy a new tool?`)
+while (!player.wonGame) {
+    const response = prompt(`You currently have ${player.money} dollars. Do you want to [m]ow lawns or [b]uy a new tool?`) 
     if (response === "m") {
         mowLawn()
     } else if (response === "b") {
         buyTool()
     } else {
-        alert("That's not a valad option! This is capatilism, baby. You gotta work, buy, or die. Type 'c' to grind or 'u' to consume.")
+        alert("That's not a valid option. This is capitalism, baby! You gotta work, buy, or die. Type 'c' to grind or 'u' to consume.")
     }
 }
