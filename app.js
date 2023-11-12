@@ -2,7 +2,7 @@
 
 const tools = [
     {name: "Teeth", generates: 1, cost: 0}, //unlimited use
-    {name: "Rusty scisors", generates: 5, cost: 5}, //purchase once, unlimited use
+    {name: "Rusty scissors", generates: 5, cost: 5}, //purchase once, unlimited use
     {name: "Old-timey push mower", generates: 50, cost: 25}, //purchase once, unlimited use
     {name: "Fancy battery mower", generates: 100, cost: 250}, //purchase once, unlimited use
     {name: "Team of starving students", generates: 250, cost: 500}, //purchase once, unlimited use
@@ -14,8 +14,9 @@ const player = {
     wonGame: false
 }
 
+const tool = tools[player.tool];
+
 function mowLawn() {
-    const tool = tools[player.tool];
     alert(`You mowed a lawn with ${tool.name} and made ${tool.generates} dollars!`);
     player.money += tool.generates
 }
@@ -24,9 +25,9 @@ function buyTool() {
     if (player.tool + 1 < tools.length) {
         const newTool = tools[player.tool + 1];
         if (newTool.cost <= player.money) {
-            alert(`You have bought a ${newTool.name} for ${newTool.cost}. Now get back to work!`);
+            alert(`You have bought a ${newTool.name} for ${newTool.cost} dollars. Now get back to work!`);
             player.tool += 1;
-            player.money -= tool.cost 
+            player.money -= newTool.cost 
         } else {alert("You cannot afford a new tool right now.")    
         } 
     } else {alert(`There are no new tools available to buy.`)}
