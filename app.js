@@ -6,8 +6,8 @@
 const tools = [
     {name: "Teeth", generates: 1, cost: 0}, //unlimited use
     {name: "Rusty scisors", generates: 5, cost: 5}, //purchase once, unlimited use
-    {name: "Old-timey push mower", generates: 50, cost: 25} //purchase once, unlimited use
-
+    {name: "Old-timey push mower", generates: 50, cost: 25}, //purchase once, unlimited use
+    {name: "Fancy battery mower", generates: "unk", cost: 250} //purchase once
 ]
 
 const player = {
