@@ -43,6 +43,7 @@ while (!player.wonGame) {
     } else {
         alert("That's not a valid option. This is capitalism, baby! You gotta work, buy, or die. Type 'c' to grind or 'u' to consume.")
     }
+    winConditions()
 }
 
 function winConditions() {
