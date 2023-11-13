@@ -26,7 +26,7 @@ function buyTool() {
         if (newTool.cost <= player.money) {
             player.money -= newTool.cost;
             player.tool += 1;
-            alert(`You have purchased a new tool. Congrats! Now get back to work.`)
+            alert(`You have purchased a ${newTool.name}. Congrats! Now get back to work.`)
             } else {alert("You cannot afford a new tool right now.")    
         } 
     } else {alert(`There are no new tools available to buy.`)}
@@ -41,13 +41,13 @@ while (!player.wonGame) {
     } else if (response === "b") {
         buyTool()
     } else {
-        alert("That's not a valid option. This is capitalism, baby! You gotta work, buy, or die. Type 'c' to grind or 'u' to consume.")
+        alert("That's not a valid option. This is capitalism, baby! You gotta work, buy, or die. Type 'm' to grind or 'b' to consume.")
     }
     winConditions()
 }
 
 function winConditions() {
 if (player.tool === tools.length - 1 && player.money >= 1000) {
-    alert(`You've hired a team and generated ${player.money}! You've won the game!`) 
+    alert(`You've hired a team to work for you and made ${player.money} dollars! You've won the game!`) 
     player.wonGame = true;
 }}
