@@ -1,4 +1,4 @@
-console.log("Yo, it's working.")
+// console.log("Yo, it's working.")
 
 const tools = [
     {name: "your teeth", generates: 1, cost: 0},
